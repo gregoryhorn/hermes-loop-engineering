@@ -1,0 +1,31 @@
+{
+  "loop_name": "hermes-loop-engineering-rd",
+  "level": "L2 Assisted for public repo, L1 Report for private/local loops",
+  "status": "active",
+  "version": 1,
+  "public_repo": {
+    "path": "/path/to/hermes-loop-engineering",
+    "github": "owner/hermes-loop-engineering"
+  },
+  "last_run_at": null,
+  "last_status": null,
+  "last_commit": null,
+  "last_validation": null,
+  "last_github_actions_status": null,
+  "improvement_backlog": [
+    "Add install smoke test using temporary HERMES_HOME",
+    "Add JSON schema validation for loop state files",
+    "Add configurable private-leakage scanner",
+    "Add FAQ for first-time Hermes users"
+  ],
+  "private_loop_recommendations_waiting_for_approval": [],
+  "recent_runs": [],
+  "notification_policy": "notify on commits, validation failures, blockers, approval requests, or high-value opportunities; stay quiet on no-op runs",
+  "kill_switch": "hermes cron pause <job_id>",
+  "pause_if": [
+    "GitHub Actions fail twice in a row",
+    "private-safety scan fails",
+    "same blocker repeats three times",
+    "maintainer says stop"
+  ]
+}

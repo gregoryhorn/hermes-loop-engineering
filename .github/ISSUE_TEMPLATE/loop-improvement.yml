@@ -1,0 +1,42 @@
+name: Loop improvement idea
+description: Suggest an improvement to the Hermes Loop Engineering starter.
+title: "[loop improvement]: "
+labels: [enhancement, loop-engineering]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or friction
+      description: What was hard, unclear, risky, or missing?
+      placeholder: Describe the issue for a new Hermes user.
+    validations:
+      required: true
+  - type: textarea
+    id: proposed
+    attributes:
+      label: Proposed improvement
+      description: What would make the loop system more useful or safer?
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Documentation
+        - Example prompt
+        - Template/state schema
+        - Validation script
+        - Installation/setup
+        - Safety/privacy
+        - Discoverability/SEO
+        - Other
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Public-safety check
+      options:
+        - label: This suggestion does not include private loops, credentials, personal paths, account workflows, or internal state.
+          required: true

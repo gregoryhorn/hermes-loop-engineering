@@ -122,6 +122,7 @@ Public-safe examples are in [`examples/`](examples/):
 - [`dependency-watch.prompt.md`](examples/dependency-watch.prompt.md) — watch outdated dependencies, propose safe updates
 - [`content-pipeline-monitor.prompt.md`](examples/content-pipeline-monitor.prompt.md) — check local media/content artifacts without publishing
 - [`service-health-watchdog.prompt.md`](examples/service-health-watchdog.prompt.md) — script-first state-change watchdog
+- [`hermes-loop-engineering-rd.prompt.md`](examples/hermes-loop-engineering-rd.prompt.md) — improve this starter repo over time with validation and public-safety gates
 
 These are intentionally generic. Replace paths, commands, schedules, and boundaries with your own.
 
@@ -149,6 +150,10 @@ skill/         Installable Hermes skill
 scripts/       Installer and readiness checker
 templates/     LOOP.md and state templates
 ```
+
+## Maintain and improve the starter
+
+Use [`docs/r-and-d-loop.md`](docs/r-and-d-loop.md) and [`examples/hermes-loop-engineering-rd.prompt.md`](examples/hermes-loop-engineering-rd.prompt.md) to set up a recurring R&D loop that improves functionality, documentation, examples, validation, and discoverability while keeping private/local loops gated.
 
 ## Validate a loop spec
 
