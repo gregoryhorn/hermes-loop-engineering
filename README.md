@@ -2,7 +2,14 @@
 
 ![Hermes Loop Engineering banner](assets/hermes-loop-engineering-banner.svg)
 
-**Hermes Loop Engineering** is a public, reusable starter system for turning repeated Hermes Agent work into **safe, stateful, scheduled, verified loops**.
+[![validate](https://github.com/gregoryhorn/hermes-loop-engineering/actions/workflows/validate.yml/badge.svg)](https://github.com/gregoryhorn/hermes-loop-engineering/actions/workflows/validate.yml)
+![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)
+![Hermes Agent](https://img.shields.io/badge/Hermes-Agent-22d3ee)
+![Loop level](https://img.shields.io/badge/default-L1%20report--first-34d399)
+
+**Keywords:** Hermes Agent automation, AI agent cron jobs, agentic workflows, loop engineering, scheduled AI agents, stateful AI workflows, LLMOps, MCP automation, prompt runbooks, safe AI automation.
+
+**Hermes Loop Engineering** is a public, reusable starter kit for turning repeated Hermes Agent work into **safe, stateful, scheduled, verified AI-agent loops**.
 
 Instead of manually prompting an agent every time, you design a small operating system around the work:
 
@@ -15,7 +22,7 @@ This repository contains:
 - example loop prompts for common use cases
 - state schemas and checklists
 - a small readiness checker
-- visual diagrams for explaining the system
+- visual diagrams and a GitHub social preview for explaining the system
 
 It does **not** contain anyone's private loops, credentials, social accounts, personal schedules, or internal state.
 
@@ -29,6 +36,10 @@ A recurring agent workflow becomes risky when it has no memory, no scope, no sto
 - What evidence proves success?
 - When should it stop and ask a human?
 - How do you pause or kill it?
+
+## Visual model
+
+![Hermes loop architecture diagram](assets/hermes-loop-architecture.svg)
 
 ## The Hermes mapping
 
@@ -123,6 +134,10 @@ These are intentionally generic. Replace paths, commands, schedules, and boundar
 5. **Cron trigger is not completion.** Completion requires evidence from tools or checks.
 6. **No broad write scope.** Use narrow allowlists and explicit denylisted areas.
 7. **Human-gate risky work.** Auth, secrets, payments, infra, publishing, deletion, and PII stay gated.
+
+## Discoverability
+
+This repository is optimized for people searching for **Hermes Agent automation**, **AI agent cron jobs**, **agentic workflows**, **loop engineering**, **stateful agent workflows**, **scheduled AI agents**, **safe AI automation**, **LLMOps**, and **MCP automation**. See [`docs/discoverability.md`](docs/discoverability.md).
 
 ## Repository contents
 
