@@ -82,6 +82,12 @@ python -m py_compile scripts/loop_readiness.py
 ```
 
 Run a markdown link check if one exists or use a lightweight local check.
+This starter includes:
+
+```bash
+python scripts/check_markdown_links.py .
+```
+
 Run a public-safety scan for environment-specific private terms before pushing.
 
 ## Commit and push rules

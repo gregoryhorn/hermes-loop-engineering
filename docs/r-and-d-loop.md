@@ -99,9 +99,10 @@ Before pushing, run at minimum:
 python scripts/loop_readiness.py templates/LOOP.example.md
 bash -n scripts/install-hermes-loop-skill.sh
 python -m py_compile scripts/loop_readiness.py
+python scripts/check_markdown_links.py .
 ```
 
-Also scan for private leakage terms appropriate to your environment before pushing.
+Also scan for private leakage terms appropriate to your environment before pushing. Keep those environment-specific terms in the private loop prompt or state, not in the public repository.
 
 After pushing, verify:
 
@@ -117,7 +118,6 @@ Good future improvements include:
 
 - generated `hermes cron create` command examples
 - JSON schema validation for state files
-- Markdown link checker script
 - automated private-leakage scanner with configurable patterns
 - install smoke test in a temporary `HERMES_HOME`
 - example dashboards for loop health

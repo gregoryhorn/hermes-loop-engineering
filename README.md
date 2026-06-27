@@ -21,7 +21,7 @@ This repository contains:
 - public-safe loop templates
 - example loop prompts for common use cases
 - state schemas and checklists
-- a small readiness checker
+- small readiness and Markdown link checkers
 - visual diagrams and a GitHub social preview for explaining the system
 
 It does **not** contain anyone's private loops, credentials, social accounts, personal schedules, or internal state.
@@ -161,6 +161,12 @@ The readiness checker is intentionally lightweight. It catches missing basics be
 
 ```bash
 python scripts/loop_readiness.py templates/LOOP.example.md
+```
+
+Before publishing documentation changes, also check relative Markdown links:
+
+```bash
+python scripts/check_markdown_links.py .
 ```
 
 ## License
