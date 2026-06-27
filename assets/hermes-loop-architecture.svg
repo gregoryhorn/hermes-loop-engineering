@@ -1,0 +1,67 @@
+<svg width="1400" height="900" viewBox="0 0 1400 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.6"/></pattern>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M1,1 L9,5 L1,9 Z" fill="#94a3b8"/></marker>
+  </defs>
+  <rect width="1400" height="900" fill="#020617"/>
+  <rect width="1400" height="900" fill="url(#grid)" opacity="0.75"/>
+  <text x="70" y="75" fill="#f8fafc" font-family="JetBrains Mono, monospace" font-size="34" font-weight="800">Hermes Loop Architecture</text>
+  <text x="70" y="115" fill="#94a3b8" font-family="JetBrains Mono, monospace" font-size="18">A recurring agent workflow with durable state, verification, and human gates.</text>
+
+  <g stroke="#94a3b8" stroke-width="2.4" marker-end="url(#arrow)">
+    <path d="M245 245 H415"/>
+    <path d="M610 245 H785"/>
+    <path d="M980 245 H1155"/>
+    <path d="M1255 335 V485"/>
+    <path d="M1155 585 H980"/>
+    <path d="M785 585 H610"/>
+    <path d="M415 585 H245"/>
+    <path d="M145 485 V335"/>
+  </g>
+
+  <g font-family="JetBrains Mono, monospace">
+    <rect x="70" y="175" width="220" height="140" rx="16" fill="#0f172a" stroke="#22d3ee" stroke-width="2"/>
+    <text x="180" y="230" text-anchor="middle" fill="#e0f2fe" font-size="21" font-weight="800">Loop Prompt</text>
+    <text x="180" y="265" text-anchor="middle" fill="#94a3b8" font-size="13">self-contained</text>
+    <text x="180" y="287" text-anchor="middle" fill="#94a3b8" font-size="13">purpose + boundaries</text>
+
+    <rect x="430" y="175" width="220" height="140" rx="16" fill="#0f172a" stroke="#34d399" stroke-width="2"/>
+    <text x="540" y="230" text-anchor="middle" fill="#dcfce7" font-size="21" font-weight="800">Scheduler</text>
+    <text x="540" y="265" text-anchor="middle" fill="#94a3b8" font-size="13">Hermes cron</text>
+    <text x="540" y="287" text-anchor="middle" fill="#94a3b8" font-size="13">cadence + delivery</text>
+
+    <rect x="800" y="175" width="220" height="140" rx="16" fill="#0f172a" stroke="#a78bfa" stroke-width="2"/>
+    <text x="910" y="230" text-anchor="middle" fill="#ede9fe" font-size="21" font-weight="800">Durable State</text>
+    <text x="910" y="265" text-anchor="middle" fill="#94a3b8" font-size="13">JSON / Markdown</text>
+    <text x="910" y="287" text-anchor="middle" fill="#94a3b8" font-size="13">outside chat</text>
+
+    <rect x="1170" y="175" width="180" height="140" rx="16" fill="#0f172a" stroke="#fbbf24" stroke-width="2"/>
+    <text x="1260" y="230" text-anchor="middle" fill="#fef3c7" font-size="21" font-weight="800">Tools</text>
+    <text x="1260" y="265" text-anchor="middle" fill="#94a3b8" font-size="13">file terminal web</text>
+    <text x="1260" y="287" text-anchor="middle" fill="#94a3b8" font-size="13">MCP connectors</text>
+
+    <rect x="1170" y="515" width="180" height="140" rx="16" fill="#0f172a" stroke="#fb7185" stroke-width="2"/>
+    <text x="1260" y="570" text-anchor="middle" fill="#ffe4e6" font-size="21" font-weight="800">Verifier</text>
+    <text x="1260" y="605" text-anchor="middle" fill="#94a3b8" font-size="13">tests / checks</text>
+    <text x="1260" y="627" text-anchor="middle" fill="#94a3b8" font-size="13">reject by default</text>
+
+    <rect x="800" y="515" width="220" height="140" rx="16" fill="#0f172a" stroke="#fb923c" stroke-width="2"/>
+    <text x="910" y="570" text-anchor="middle" fill="#ffedd5" font-size="21" font-weight="800">Human Gate</text>
+    <text x="910" y="605" text-anchor="middle" fill="#94a3b8" font-size="13">approval / escalation</text>
+    <text x="910" y="627" text-anchor="middle" fill="#94a3b8" font-size="13">risk boundaries</text>
+
+    <rect x="430" y="515" width="220" height="140" rx="16" fill="#0f172a" stroke="#22d3ee" stroke-width="2"/>
+    <text x="540" y="570" text-anchor="middle" fill="#e0f2fe" font-size="21" font-weight="800">Report</text>
+    <text x="540" y="605" text-anchor="middle" fill="#94a3b8" font-size="13">state changes only</text>
+    <text x="540" y="627" text-anchor="middle" fill="#94a3b8" font-size="13">no heartbeat spam</text>
+
+    <rect x="70" y="515" width="220" height="140" rx="16" fill="#0f172a" stroke="#34d399" stroke-width="2"/>
+    <text x="180" y="570" text-anchor="middle" fill="#dcfce7" font-size="21" font-weight="800">Prune</text>
+    <text x="180" y="605" text-anchor="middle" fill="#94a3b8" font-size="13">resolved findings</text>
+    <text x="180" y="627" text-anchor="middle" fill="#94a3b8" font-size="13">attempt counters</text>
+
+    <rect x="70" y="740" width="1280" height="82" rx="18" fill="#0f172a" stroke="#334155"/>
+    <text x="105" y="790" fill="#f8fafc" font-size="18" font-weight="800">Operating rule:</text>
+    <text x="285" y="790" fill="#cbd5e1" font-size="17">Start L1 report-only. Promote only after useful state, low noise, narrow scope, verifier evidence, and a documented kill switch.</text>
+  </g>
+</svg>

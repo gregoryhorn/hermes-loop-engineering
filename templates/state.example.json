@@ -1,0 +1,24 @@
+{
+  "loop_name": "example-daily-project-triage",
+  "level": "L1 Report",
+  "status": "active",
+  "version": 1,
+  "watched_scope": {
+    "project_path": "/path/to/project",
+    "branch": "main"
+  },
+  "last_run_at": null,
+  "last_status": null,
+  "findings": [],
+  "decisions_needed": [],
+  "attempt_counters": {},
+  "recent_runs": [],
+  "notification_policy": "notify only on state changes, blockers, risky decisions, or completed deliverables",
+  "kill_switch": "hermes cron pause <job_id>",
+  "pause_if": [
+    "same blocker repeats three times",
+    "budget exceeded",
+    "scope expansion required",
+    "human says stop"
+  ]
+}
