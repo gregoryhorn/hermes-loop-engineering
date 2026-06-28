@@ -7,8 +7,6 @@
 ![Hermes Agent](https://img.shields.io/badge/Hermes-Agent-22d3ee)
 ![Loop level](https://img.shields.io/badge/default-L1%20report--first-34d399)
 
-**Keywords:** Hermes Agent automation, AI agent cron jobs, agentic workflows, loop engineering, scheduled AI agents, stateful AI workflows, LLMOps, MCP automation, prompt runbooks, safe AI automation.
-
 **Hermes Loop Engineering** is a public, reusable starter kit for turning repeated Hermes Agent work into **safe, stateful, scheduled, verified AI-agent loops**.
 
 Instead of manually prompting an agent every time, you design a small operating system around the work:
@@ -168,6 +166,11 @@ Before publishing documentation changes, also check relative Markdown links:
 ```bash
 python scripts/check_markdown_links.py .
 ```
+
+## SEO
+
+**Keywords:** Hermes Agent automation, AI agent cron jobs, agentic workflows, loop engineering, scheduled AI agents, stateful AI workflows, LLMOps, MCP automation, prompt runbooks, safe AI automation.
+
 
 ## License
 
