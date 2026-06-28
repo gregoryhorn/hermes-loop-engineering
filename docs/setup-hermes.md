@@ -1,17 +1,19 @@
 # Setting up loops in Hermes
 
+This guide assumes Hermes Agent is already installed and configured. This repository is for shaping recurring Hermes work into safe, stateful loops.
+
 ## Prerequisites
 
-- Hermes Agent installed and configured
-- `cronjob` / Hermes cron available
-- the required toolsets enabled for the loop, usually some of:
+- A working Hermes Agent setup
+- Hermes cron or the `cronjob` tool available
+- The toolsets your loop needs, usually some of:
   - `file`
   - `terminal`
   - `web`
   - `session_search`
-  - `github` or relevant MCP tools
+  - GitHub or relevant MCP tools
 
-Check your Hermes setup:
+Sanity check your local Hermes environment:
 
 ```bash
 hermes doctor
@@ -19,7 +21,9 @@ hermes tools list
 hermes cron list
 ```
 
-## Install the skill
+## Install the Loop Engineering skill
+
+From this repository:
 
 ```bash
 ./scripts/install-hermes-loop-skill.sh
@@ -33,6 +37,8 @@ $HERMES_HOME/skills/loop-engineering/SKILL.md
 
 If `HERMES_HOME` is unset, it defaults to `~/.hermes`.
 
+Start a fresh Hermes session or reload skills before using it.
+
 ## Create a state file
 
 ```bash
@@ -40,27 +46,37 @@ mkdir -p ~/.hermes/state/loops
 cp templates/state.example.json ~/.hermes/state/loops/example-loop.json
 ```
 
-Edit the file before running the loop.
+Edit the copied file for your loop, then validate it:
+
+```bash
+python scripts/validate_loop_state.py ~/.hermes/state/loops/example-loop.json
+```
+
+The validator is permissive by design. Missing required core fields fail. Missing recommended operational fields warn.
 
 ## Create a loop from Hermes chat
 
 Start with one of the example prompts:
 
 ```text
-Use the loop-engineering skill. Create a new L1 report-only Hermes cron loop from examples/daily-project-triage.prompt.md. Use ~/.hermes/state/loops/example-loop.json as durable state. Do not mutate code or external systems.
+Use the loop-engineering skill. Create a new L1 report-only Hermes cron loop from examples/daily-project-triage.prompt.md.
+
+Use ~/.hermes/state/loops/example-loop.json as durable state.
+Do not mutate code or external systems.
+Deliver only on state changes, blockers, risky decisions, or completed artifacts.
 ```
 
 ## Create a loop manually
 
 Hermes cron prompts should be self-contained because future runs start without your current chat context.
 
-Use:
+Use your Hermes cron interface or CLI, then paste and customize an example prompt:
 
 ```bash
 hermes cron create "0 9 * * 1-5"
 ```
 
-Then paste an example prompt and customize:
+Customize:
 
 - loop name
 - schedule
@@ -69,6 +85,24 @@ Then paste an example prompt and customize:
 - allowed tools
 - forbidden actions
 - delivery behavior
+- escalation rule
+- kill switch
+
+## First-run smoke check
+
+Before trusting the schedule, run once and inspect the result.
+
+A good first run should either:
+
+- update the state file with a useful baseline
+- report one clear blocker with evidence
+- stay quiet or produce a one-line no-change summary
+
+Check state syntax:
+
+```bash
+python -m json.tool ~/.hermes/state/loops/example-loop.json >/dev/null
+```
 
 ## Recommended delivery rule
 
