@@ -98,8 +98,11 @@ Before pushing, run at minimum:
 ```bash
 python scripts/loop_readiness.py templates/LOOP.example.md
 bash -n scripts/install-hermes-loop-skill.sh
-python -m py_compile scripts/loop_readiness.py
+python -m py_compile scripts/loop_readiness.py scripts/check_markdown_links.py scripts/validate_loop_state.py scripts/extract_cron_response.py
+python scripts/validate_loop_state.py templates/state.example.json
+python scripts/validate_loop_state.py templates/rnd-state.example.json
 python scripts/check_markdown_links.py .
+python -m unittest discover -s tests -v
 ```
 
 Also scan for private leakage terms appropriate to your environment before pushing. Keep those environment-specific terms in the private loop prompt or state, not in the public repository.
@@ -117,7 +120,7 @@ gh repo view OWNER/REPO --json nameWithOwner,visibility,url,description,isTempla
 Good future improvements include:
 
 - generated `hermes cron create` command examples
-- JSON schema validation for state files
+- stricter JSON schema validation modes for state files
 - automated private-leakage scanner with configurable patterns
 - install smoke test in a temporary `HERMES_HOME`
 - example dashboards for loop health

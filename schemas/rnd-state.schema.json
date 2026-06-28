@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/gregoryhorn/hermes-loop-engineering/schemas/rnd-state.schema.json",
+  "title": "Hermes R&D Loop State",
+  "description": "Permissive extension of the base loop state contract for public-safe R&D loops.",
+  "allOf": [
+    {"$ref": "./loop-state.schema.json"},
+    {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "public_repo": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "path": {"type": "string"},
+            "github": {"type": "string"}
+          }
+        },
+        "cron_job_id": {"type": "string"},
+        "last_commit": {"type": ["string", "null"]},
+        "last_validation": {"type": ["string", "null"]},
+        "last_github_actions_status": {"type": ["string", "null"]},
+        "improvement_backlog": {"type": "array", "items": {"type": "string"}},
+        "private_loop_recommendations_waiting_for_approval": {"type": "array"}
+      }
+    }
+  ]
+}

@@ -142,10 +142,11 @@ This repository is optimized for people searching for **Hermes Agent automation*
 
 ```text
 assets/        Visual diagrams and banner SVGs
-docs/          Concepts, setup, safety, and operation docs
+docs/          Concepts, setup, safety, artifact flow, and operation docs
 examples/      Public-safe example loop prompts
+schemas/       Permissive JSON Schema contracts for loop state
 skill/         Installable Hermes skill
-scripts/       Installer and readiness checker
+scripts/       Installer, validation, and response extraction tools
 templates/     LOOP.md and state templates
 ```
 
@@ -159,6 +160,13 @@ The readiness checker is intentionally lightweight. It catches missing basics be
 
 ```bash
 python scripts/loop_readiness.py templates/LOOP.example.md
+```
+
+Loop state validation is intentionally permissive: required core fields fail the check, recommended operational fields print warnings, and private/local extension fields are allowed.
+
+```bash
+python scripts/validate_loop_state.py templates/state.example.json
+python scripts/validate_loop_state.py templates/rnd-state.example.json
 ```
 
 Before publishing documentation changes, also check relative Markdown links:
