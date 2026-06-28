@@ -19,9 +19,11 @@ jobs:
           python scripts/validate_loop_state.py templates/state.example.json
           python scripts/validate_loop_state.py templates/rnd-state.example.json
       - name: Check Python syntax
-        run: python -m py_compile scripts/loop_readiness.py scripts/check_markdown_links.py scripts/validate_loop_state.py scripts/extract_cron_response.py scripts/check_assets.py
+        run: python -m py_compile scripts/loop_readiness.py scripts/check_markdown_links.py scripts/validate_loop_state.py scripts/extract_cron_response.py scripts/check_assets.py scripts/public_release_check.py
       - name: Check visual assets
         run: python scripts/check_assets.py
+      - name: Check public release gates
+        run: python scripts/public_release_check.py
       - name: Check Markdown links
         run: python scripts/check_markdown_links.py .
       - name: Run tests

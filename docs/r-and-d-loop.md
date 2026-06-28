@@ -98,9 +98,11 @@ Before pushing, run at minimum:
 ```bash
 python scripts/loop_readiness.py templates/LOOP.example.md
 bash -n scripts/install-hermes-loop-skill.sh
-python -m py_compile scripts/loop_readiness.py scripts/check_markdown_links.py scripts/validate_loop_state.py scripts/extract_cron_response.py
+python -m py_compile scripts/loop_readiness.py scripts/check_markdown_links.py scripts/validate_loop_state.py scripts/extract_cron_response.py scripts/check_assets.py scripts/public_release_check.py
 python scripts/validate_loop_state.py templates/state.example.json
 python scripts/validate_loop_state.py templates/rnd-state.example.json
+python scripts/check_assets.py
+python scripts/public_release_check.py
 python scripts/check_markdown_links.py .
 python -m unittest discover -s tests -v
 ```

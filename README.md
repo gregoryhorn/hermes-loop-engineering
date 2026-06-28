@@ -215,9 +215,11 @@ python scripts/validate_loop_state.py templates/state.example.json
 python scripts/validate_loop_state.py templates/rnd-state.example.json
 ```
 
-Before publishing documentation changes, also check relative Markdown links:
+Before publishing public-facing changes, also check visual assets, release gates, and relative Markdown links:
 
 ```bash
+python scripts/check_assets.py
+python scripts/public_release_check.py
 python scripts/check_markdown_links.py .
 ```
 
